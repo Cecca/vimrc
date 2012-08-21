@@ -17,6 +17,8 @@ Bundle 'Haskell-Conceal'
 Bundle 'syntaxhaskell.vim'
 " For commenting things
 Bundle 'The-NERD-Commenter'
+" NERD Tree
+Bundle 'The-NERD-tree'
 " To have syntax check every time a document is saved
 " ghc-mod from hackage is required for haskell
 Bundle 'Syntastic'
@@ -62,6 +64,12 @@ nmap <F9> :NERDTreeToggle<CR>
 
 set foldmethod=marker
 
+nmap <leader>md :%! hsmarkdown
+
+" Syntastic modes
+let g:syntastic_mode_map = { 'mode' : 'passive',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': []}
 
 "" ----------------------------------------------------------------------------
 ""     Haskell Mode
