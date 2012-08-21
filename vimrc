@@ -28,6 +28,8 @@ Bundle 'mru.vim'
 Bundle 'altercation/vim-colors-solarized'
 " Project
 Bundle 'project.tar.gz'
+" Fo moving
+Bundle 'EasyMotion'
 
 
 "" ----------------------------------------------------------------------------
