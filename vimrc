@@ -9,6 +9,7 @@ call vundle#rc()
 "" ----------------------------------------------------------------------------
 
 Bundle 'gmarik/vundle'
+Bundle 'mattn/zencoding-vim'
 Bundle 'Tagbar'
 Bundle 'Align'
 " Replaces some haskell tokens with unicode characters
@@ -28,8 +29,10 @@ Bundle 'mru.vim'
 Bundle 'altercation/vim-colors-solarized'
 " Project
 Bundle 'project.tar.gz'
-" Fo moving
+" For moving
 Bundle 'EasyMotion'
+Bundle 'OmniCppComplete'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 
 
 "" ----------------------------------------------------------------------------
