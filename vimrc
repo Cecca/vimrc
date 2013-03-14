@@ -9,6 +9,7 @@ call vundle#rc()
 "" ----------------------------------------------------------------------------
 
 Bundle 'gmarik/vundle'
+Bundle 'vim-scala'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Tagbar'
 Bundle 'Align'
@@ -31,8 +32,13 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'project.tar.gz'
 " For moving
 Bundle 'EasyMotion'
-Bundle 'OmniCppComplete'
+"Bundle 'OmniCppComplete'
+Bundle 'clang-complete'
+Bundle 'snipMate'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'gnuplot.vim'
+" Buffer management
+Bundle 'minibufexpl.vim'
 
 
 "" ----------------------------------------------------------------------------
@@ -49,19 +55,20 @@ set number
 
 set smartindent
 set expandtab
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 
 syntax enable
 
 if has("gui_running")
     set background=dark
     colorscheme solarized
-    set guioptions=mT
+    set guioptions=
 endif
 
 nmap <F8> :TagbarToggle<CR>
 nmap <F9> :NERDTreeToggle<CR>
+nmap <leader>m :make<CR>
 
 "" ----------------------------------------------------------------------------
 ""     Editing options
@@ -74,7 +81,7 @@ nmap <leader>md :%! hsmarkdown
 " Syntastic modes
 let g:syntastic_mode_map = { 'mode' : 'passive',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': []}
+                           \ 'passive_filetypes': ['haskell']}
 
 "" ----------------------------------------------------------------------------
 ""     Haskell Mode
@@ -83,4 +90,37 @@ let g:syntastic_mode_map = { 'mode' : 'passive',
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
 let g:haddock_browser = "/usr/bin/firefox"
+
+"" ----------------------------------------------------------------------------
+""     Clang complete
+"" ----------------------------------------------------------------------------
+
+let g:clang_auto_select = 1
+
+" disable complete scratch window
+set completeopt=menu,menuone
+
+" limit popup height
+set pumheight=10
+
+if has("gui_running")
+  inoremap <C-Space> <C-n>
+else
+  inoremap <Nul> <C-n>
+endif
+
+
+"" ----------------------------------------------------------------------------
+""    Buffer management
+"" ----------------------------------------------------------------------------
+
+let g:miniBufExplMapWindowNavVim = 1 
+
+
+"" ----------------------------------------------------------------------------
+""    Zencoding
+"" ----------------------------------------------------------------------------
+
+
+" let g:user_zen_leader_key = '<c-l>'
 
